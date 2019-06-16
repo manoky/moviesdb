@@ -28,17 +28,17 @@ const MovieItem = (props: Movie) => {
       <div className="MovieImg">
         <img src={imageURL(poster_path)} alt={title} />
       </div>
+      <div className="Title">
+        <h2>{title}</h2>
+      </div>
       <div className="MovieInfo">
-        <h2 className="Title">{title}</h2>
-        <div className="InfoWrapper">
-          <div className="YearCol">
-            <span>Year</span>
-            <h3>{date[0]}</h3>
-          </div>
-          <div className="RatingCol">
-            <span>Rating</span>
-            <h3>{vote_average}</h3>
-          </div>
+        <div className="YearCol">
+          <span>Year</span>
+          <h3>{date[0]}</h3>
+        </div>
+        <div className="RatingCol">
+          <span>Rating</span>
+          <h3>{vote_average}</h3>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions/fetch';
 import MovieItem from './movie-item/MovieItem';
+import './MovieHomeView.scss';
 
 class MovieHomeView extends Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class MovieHomeView extends Component {
     const { getMovies } = this.props;
     const { movies } = getMovies;
     return (
-      <div>
+      <div className="MovieHomeView">
         {
           movies.map(movie => (
             <MovieItem key={movie.id} movie={movie} />
