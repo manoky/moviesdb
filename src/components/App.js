@@ -1,7 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchMovies, fetchMoviesWithParams } from './actions/fetch';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { fetchMovies, fetchMoviesWithParams } from '../actions/fetch';
+import MovieHomeView from './movie-home-view/MovieHomeView';
 
 class App extends Component {
   componentDidMount() {
@@ -11,10 +13,14 @@ class App extends Component {
 
   render() {
     const { getMovies } = this.props;
-    console.log(getMovies.movies);
+    console.log('Movies', getMovies.movies);
     return (
       <div>
-        <h1>Hello from React</h1>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={MovieHomeView} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
