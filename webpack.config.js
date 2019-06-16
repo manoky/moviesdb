@@ -37,5 +37,9 @@ module.exports = {
       inject: 'body',
       template: './index.html',
     }),
+
+    new webpack.DefinePlugin({
+      DB_KEY: JSON.stringify(process.env.DB_KEY)
+    })
   ],
 };
