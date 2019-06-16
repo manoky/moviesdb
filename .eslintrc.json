@@ -1,0 +1,33 @@
+{
+    "parser":"babel-eslint",
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": "airbnb",
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly",
+      "DB_KEY": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": 0,
+      "import/prefer-default-export": 0,
+      "import/no-named-as-default-member": 0,
+      "import/no-named-as-default": 0,
+      "one-var": 0,
+      "one-var-declaration-per-line": 0,
+      "no-shadow": 0,
+      "react/prop-types": 0
+    }
+}
