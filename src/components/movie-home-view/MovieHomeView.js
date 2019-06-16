@@ -1,11 +1,18 @@
 /* eslint-disable react/prefer-stateless-function */
+// @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions/fetch';
 import MovieItem from './movie-item/MovieItem';
 import './MovieHomeView.scss';
+import SideBar from '../UI/sidebar/SideBar';
 
-class MovieHomeView extends Component {
+type Props = {
+  fetchMovies:() => void,
+  getMovies: Object,
+}
+
+class MovieHomeView extends Component<Props> {
   componentDidMount() {
     const { fetchMovies } = this.props;
     fetchMovies();
@@ -16,11 +23,14 @@ class MovieHomeView extends Component {
     const { movies } = getMovies;
     return (
       <div className="MovieHomeView">
-        {
-          movies.map(movie => (
-            <MovieItem key={movie.id} movie={movie} />
-          ))
-        }
+        <SideBar />
+        <div className="MovieGrid">
+          {
+            movies.map(movie => (
+              <MovieItem key={movie.id} movie={movie} />
+            ))
+          }
+        </div>
       </div>
     );
   }

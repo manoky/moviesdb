@@ -1,6 +1,17 @@
 .MovieHomeView {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: flex-start;
+  padding: 20px;
+
+  .MovieGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex: 3;
+  }
+
+  .SideBar {
+    flex: 1;
+    border: 1px red solid;
+  }
 }
