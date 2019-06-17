@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
-    "build": "webpack",
     "start": "node ./server.js",
+    "build": "webpack",
     "heroku-postbuild": "npm run build",
     "lint": "eslint ./src",
     "flow": "flow"
