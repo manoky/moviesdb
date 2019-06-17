@@ -1,4 +1,5 @@
 /* eslint-disable react/prefer-stateless-function */
+// @flow
 import React, { Component } from 'react';
 import InputRange from 'react-input-range';
 import { connect } from 'react-redux';
@@ -7,6 +8,18 @@ import { fetchMoviesWithParams } from '../../../actions/fetch';
 import 'react-input-range/lib/css/index.css';
 import './SideBar.scss';
 
+type Props = {
+  fetchMoviesWithParams:(
+    rMax: number,
+    rMin: number,
+    yrMax: number,
+    yrMin: number,
+    rtMax: number,
+    rtMin: number,
+    seletedGenre: number
+    ) => void;
+}
+
 type State = {
   year: { min:number, max: number },
   rating: { min:number, max: number },
@@ -14,7 +27,7 @@ type State = {
   genre: number,
 }
 
-class SideBar extends Component<State> {
+class SideBar extends Component<Props, State> {
   state = {
     year: { min: 1990, max: 2019 },
     rating: { min: 0, max: 10 },
