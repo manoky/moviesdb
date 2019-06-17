@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 require('dotenv').config();
 
 module.exports = {
+  mode: 'development',
   context: path.join(__dirname, 'src'),
   entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './bundle.js',
+    filename: 'bundle.js',
     publicPath: '/',
   },
   devServer: {
@@ -39,7 +40,7 @@ module.exports = {
     }),
 
     new webpack.DefinePlugin({
-      DB_KEY: JSON.stringify(process.env.DB_KEY)
-    })
+      DB_KEY: JSON.stringify(process.env.DB_KEY),
+    }),
   ],
 };

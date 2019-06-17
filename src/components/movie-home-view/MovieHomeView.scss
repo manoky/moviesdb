@@ -1,0 +1,42 @@
+.MovieHomeView {
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  padding-bottom: 80px;
+
+  .MovieGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex: 3;
+    margin: auto;
+  }
+
+  .SideBar {
+    flex: 1;
+  }
+
+  @media all and (max-width: 970px) {
+
+
+    .MovieGrid {
+      flex: 2;
+    }
+  }
+
+  @media all and (max-width: 768px) {
+
+    .MovieGrid {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .SideBar {
+      display: none;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    max-width: 100%;
+  }
+}
