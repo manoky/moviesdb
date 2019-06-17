@@ -1,14 +1,18 @@
 // @flow
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import { connect } from 'react-redux';
 import Select, { Option } from 'rc-select';
 import '../../../../node_modules/rc-select/assets/index.css';
 import './SelectInput.scss';
 
 
 type Props = {
-  genres: Array<Object>,
-  setGenre:(value: number) => void,
+  genres: Array<{
+    name: string,
+    id: Number,
+  }>,
+  setGenre:() => void,
 };
 
 const SelectInput = (props: Props) => (
@@ -19,19 +23,24 @@ const SelectInput = (props: Props) => (
     <div style={{ width: '90%' }}>
       <Select
         allowClear
-        placeholder="placeholder"
-        defaultValue="Genres"
+        placeholder="Genre"
+        defaultValue="Genre"
         style={{ width: '100%' }}
         animation="slide-up"
         showSearch={false}
-
+        onChange={props.setGenre}
         optionFilterProp="text"
         optionLabelProp="children"
       >
-        <Option value="11" text="lucy">Lucy</Option>
+        {
+          props.genres.map(genre => (
+            <Option key={genre.id} value={genre.id} text={genre.name}>{genre.name}</Option>
+          ))
+        }
       </Select>
     </div>
   </div>
 );
 
-export default SelectInput;
+
+export default connect(({ genres }) => ({ genres }))(SelectInput);

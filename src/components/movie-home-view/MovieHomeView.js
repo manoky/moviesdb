@@ -3,19 +3,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions/fetch';
+import { fetchGenre } from '../../actions/genre';
 import MovieItem from './movie-item/MovieItem';
 import './MovieHomeView.scss';
 import SideBar from '../UI/sidebar/SideBar';
 
 type Props = {
   fetchMovies:() => void,
+  fetchGenre: () => void,
   getMovies: Object,
 }
 
 class MovieHomeView extends Component<Props> {
   componentDidMount() {
-    const { fetchMovies } = this.props;
+    const { fetchMovies, fetchGenre } = this.props;
     fetchMovies();
+    fetchGenre();
   }
 
   render() {
@@ -37,4 +40,4 @@ class MovieHomeView extends Component<Props> {
 }
 
 export default connect(({ getMovies }) => ({ getMovies }),
-  { fetchMovies })(MovieHomeView);
+  { fetchMovies, fetchGenre })(MovieHomeView);
