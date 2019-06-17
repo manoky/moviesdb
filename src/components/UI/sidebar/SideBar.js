@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import SelectInput from '../select/SelectInput';
 import { fetchMoviesWithParams } from '../../../actions/fetch';
 import 'react-input-range/lib/css/index.css';
+import './SideBar.scss';
 
 type State = {
   year: { min:number, max: number },
@@ -48,11 +49,12 @@ class SideBar extends Component<State> {
 
     return (
       <div className="SideBar">
-        <form onSubmit={this.fetchParams}>
+        <form onSubmit={this.fetchParams} className="FormInput">
           <SelectInput
             setGenre={this.setGenre}
           />
-          <div>
+          <div className="InputRange">
+            <h2>Year</h2>
             <InputRange
               maxValue={2019}
               minValue={1990}
@@ -60,7 +62,8 @@ class SideBar extends Component<State> {
               onChange={year => this.setState({ year })}
             />
           </div>
-          <div style={{ margin: '40px 0px' }}>
+          <div className="InputRange">
+            <h2>Rating</h2>
             <InputRange
               maxValue={10}
               minValue={0}
@@ -68,7 +71,8 @@ class SideBar extends Component<State> {
               onChange={rating => this.setState({ rating })}
             />
           </div>
-          <div>
+          <div className="InputRange">
+            <h2>Runtime</h2>
             <InputRange
               maxValue={300}
               minValue={0}

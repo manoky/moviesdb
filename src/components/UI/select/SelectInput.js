@@ -17,7 +17,6 @@ type Props = {
 
 const SelectInput = (props: Props) => (
   <div className="SelectInput">
-    <div style={{ height: 120 }} />
     <h2>Genre</h2>
 
     <div style={{ width: '90%' }}>
@@ -33,9 +32,10 @@ const SelectInput = (props: Props) => (
         optionLabelProp="children"
       >
         {
-          props.genres.map(genre => (
+          props.genres ? props.genres.map(genre => (
             <Option key={genre.id} value={genre.id} text={genre.name}>{genre.name}</Option>
           ))
+            : null
         }
       </Select>
     </div>

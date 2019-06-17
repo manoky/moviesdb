@@ -1,0 +1,47 @@
+$slider-color: #e2793f;
+$slider-border-color: #db7137;
+
+.SideBar {
+  border: red 1px solid;
+  margin-right: 20px;
+  .FormInput {
+    padding: 0px 20px;
+    width: 90%;
+
+    h2 {
+      text-align: left;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    input[type=submit] {
+      background-color: $slider-color;
+      margin: auto;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+    }
+  }
+
+  .InputRange {
+    margin-bottom: 80px;
+  }
+
+  .input-range__label--value {
+    .input-range__label-container {
+      background: $slider-color;
+      color: #fff;
+      padding: 0 5px;
+      border-radius: 3px;
+    }
+  }
+
+  .input-range__track--active {
+    background: $slider-color;
+  }
+
+  .input-range__slider {
+    background: $slider-color;
+    border: 1px $slider-border-color;
+  }
+}
