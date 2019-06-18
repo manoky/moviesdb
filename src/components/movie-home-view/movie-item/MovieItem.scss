@@ -17,7 +17,10 @@ $subheading-color: rgba(0,0,0,0.5);
       font-size: 18px;
     }
 
-    color: $heading-color;
+    a {
+      text-decoration: none;
+      color: $heading-color;
+    }
     padding: 0 10px;
   }
 

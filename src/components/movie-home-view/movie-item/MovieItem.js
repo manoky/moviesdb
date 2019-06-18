@@ -1,20 +1,27 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/destructuring-assignment */
+// @flow
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { imageURL } from '../../../actions/URL';
+import { fetchMovie } from '../../../actions/movie';
 import './MovieItem.scss';
 
 type Movie = {
   movie: {
+    id: number,
     title: string,
     release_date: string,
     vote_average: number,
     poster_path: string,
-  }
+  },
+  fetchMovie:(id: number) => void;
 }
 
 const MovieItem = (props: Movie) => {
   const {
+    id,
     title,
     release_date,
     vote_average,
@@ -24,12 +31,21 @@ const MovieItem = (props: Movie) => {
   const date = release_date.split('-');
 
   return (
-    <div className="MovieItem">
+    <div
+      role="button"
+      tabIndex={0}
+      className="MovieItem"
+      onClick={() => props.fetchMovie(id)}
+    >
       <div className="MovieImg">
-        <img src={imageURL(poster_path)} alt={title} />
+        <Link to={`/movie/${title}`}>
+          <img src={imageURL(poster_path)} alt={title} />
+        </Link>
       </div>
       <div className="Title">
-        <h2>{title}</h2>
+        <Link to={`/movie/${title}`}>
+          <h2>{title}</h2>
+        </Link>
       </div>
       <div className="MovieInfo">
         <div className="YearCol">
@@ -45,4 +61,4 @@ const MovieItem = (props: Movie) => {
   );
 };
 
-export default MovieItem;
+export default connect(null, { fetchMovie })(MovieItem);

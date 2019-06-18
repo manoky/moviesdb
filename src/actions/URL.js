@@ -16,4 +16,6 @@ export const moviesParamsURL = (
 
 export const imageURL = (image: string) => `https://image.tmdb.org/t/p/w500${image}`;
 
-export const genreURL = () => 'https://api.themoviedb.org/3/genre/movie/list?api_key=bac128078ed572b3da5ccecc59685054&language=en-US';
+export const genreURL = () => `https://api.themoviedb.org/3/genre/movie/list?api_key=${DB_KEY}&language=en-US`;
+
+export const movieURL = (id: number) => `https://api.themoviedb.org/3/movie/${id}?api_key=${DB_KEY}&language=en-US`;

@@ -1,12 +1,12 @@
 // @flow
 import { FETCH_GENRE_SUCCESS } from '../actions/genre';
 
-type State = {
+type State = Array<{
   name: string,
   id: number,
-};
+}>;
 
-const initialState = null;
+const initialState = [];
 
 const genreReducer = (state: State = initialState, action: Object): State => {
   switch (action.type) {
