@@ -1,0 +1,64 @@
+.MovieDetailsView {
+
+  width: 1200px;
+  margin: auto;
+  padding: 20px;
+  padding-top: 40px;
+
+  .DetailHead {
+    display: flex;
+    flex-direction: row;
+    background: red;
+  }
+
+  .MovieInfo {
+    width: 50%;
+
+    .GenreLangCountryRow {
+      .Genres {
+        span {
+          padding: 2px 5px;
+          background: #fff;
+          border-radius: 3px;
+          font-style: italic;
+        }
+      }
+
+      .Languages, .Country, .Genres {
+        span {
+          margin-right: 15px;
+        }
+      }
+
+      .Languages, .Country {
+        display: inline-block;
+
+      }
+
+      .Country {
+        margin-right: 35px;
+      }
+    }
+  }
+
+  .MovieImg {
+    width: 300px;
+    margin-right: 40px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .RatingRow {
+    .RatingCircularBar {
+      width: 10%;
+    }
+
+    p, .RatingCircularBar {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+
+}

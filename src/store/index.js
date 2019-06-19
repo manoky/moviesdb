@@ -14,7 +14,7 @@ if (process.env !== 'production') {
 
 const enhancer = compose(
   applyMiddleware(...middleware),
-  localStorage(['getMovies', 'genres']),
+  localStorage(['getMovies', 'genres', 'movie']),
 );
 
 const store = createStore(rootReducer, enhancer);

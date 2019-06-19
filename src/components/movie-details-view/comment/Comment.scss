@@ -1,0 +1,56 @@
+.Comment {
+
+  h2 {
+    text-align: center;
+    position: relative;
+    bottom: -73px;
+    background: #fff;
+    width: 200px;
+    margin: auto;
+  }
+
+  hr {
+    margin: 60px 0;
+    height: 8px;
+    background: #000;
+  }
+
+  .CommentWrapper {
+    width: 100%;
+
+    .CommentItem {
+      margin-bottom: 40px;
+      padding: 20px 15px;
+      display: flex;
+      box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
+      border-radius: 4px;
+
+
+
+      .CommentContent {
+        font-size: 14px;
+        line-height: 1.6;
+
+        .CommentUsername {
+          margin-top: 20px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .CommentAuthor {
+        margin-bottom: 20px;
+
+        .CommentImg {
+          width: 60px;
+          box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
+          margin-right: 10px;
+          margin-top: 10px;
+          img {
+            width: 100%;
+          }
+        }
+
+      }
+    }
+  }
+}

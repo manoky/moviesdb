@@ -10,7 +10,7 @@ import './SelectInput.scss';
 type Props = {
   genres: Array<{
     name: string,
-    id: Number,
+    id: number,
   }>,
   setGenre:() => void,
 };

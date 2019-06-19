@@ -16,7 +16,7 @@ type Props = {
     yrMin: number,
     rtMax: number,
     rtMin: number,
-    seletedGenre: number
+    seletedGenre: string
     ) => void;
 }
 
