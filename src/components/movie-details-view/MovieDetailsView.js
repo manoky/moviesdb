@@ -1,11 +1,14 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { connect } from 'react-redux';
-import  { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { imageURL } from '../../actions/URL';
-import './MovieDetailsView.scss';
 import List from './list/List';
+import Crew from './crew/Crew';
+import Cast from './cast/Cast';
+import './MovieDetailsView.scss';
+import Comment from './comment/Comment';
 
 type Props = {
   movie: Object,
@@ -58,6 +61,14 @@ const MovieDetailsView = (props: Props) => {
             />
           </div>
         </div>
+      </div>
+
+      <div className="CreditsRow">
+        <Crew crew credits={movie.credits.crew} />
+        <Cast credits={movie.credits.cast} />
+      </div>
+      <div>
+        <Comment comments={movie.reviews.results} />
       </div>
     </div>
 

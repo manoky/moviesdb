@@ -1,5 +1,5 @@
 .MovieDetailsView {
-  background: red;
+
   width: 1200px;
   margin: auto;
   padding: 20px;
@@ -8,6 +8,7 @@
   .DetailHead {
     display: flex;
     flex-direction: row;
+    background: red;
   }
 
   .MovieInfo {
@@ -16,16 +17,26 @@
     .GenreLangCountryRow {
       .Genres {
         span {
-          margin-right: 5px;
-          padding: 5px;
+          padding: 2px 5px;
           background: #fff;
           border-radius: 3px;
+          font-style: italic;
+        }
+      }
 
+      .Languages, .Country, .Genres {
+        span {
+          margin-right: 15px;
         }
       }
 
       .Languages, .Country {
         display: inline-block;
+
+      }
+
+      .Country {
+        margin-right: 35px;
       }
     }
   }
