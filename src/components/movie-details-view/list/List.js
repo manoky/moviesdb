@@ -13,7 +13,7 @@ const List = (props: Props) => {
     <div className={ItemClass}>
       <h3>{title}</h3>
       {
-        item.map(item => (
+        item && item.map(item => (
           <span key={item.name}>
             {item.name}
           </span>

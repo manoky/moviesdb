@@ -2,7 +2,8 @@
     "parser":"babel-eslint",
     "env": {
       "browser": true,
-      "es6": true
+      "es6": true,
+      "jest/globals": true
     },
     "extends": "airbnb",
     "globals": {
@@ -18,7 +19,8 @@
       "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
       "react/jsx-filename-extension": 0,

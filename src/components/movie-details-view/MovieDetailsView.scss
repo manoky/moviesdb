@@ -1,37 +1,69 @@
+$background-color: #EFEFEF;
+
 .MovieDetailsView {
-
-  width: 1200px;
+  width: 100%;
   margin: auto;
-  padding: 20px;
-  padding-top: 40px;
 
+  .DetailHeadFullWidth {
+    width: 100%;
+    background: lighten($background-color, 2%);
+    padding: 80px 0;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  }
   .DetailHead {
     display: flex;
-    flex-direction: row;
-    background: red;
+    width: 1200px;
+    margin: auto;
+    color: #fff;
   }
 
   .MovieInfo {
     width: 50%;
 
+    h1, h3 {
+      color: #fff;
+    }
+
+    h1 {
+      span {
+        margin-right: 10px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      line-height: 1.3;
+      font-size: 21px;
+    }
+
+
     .GenreLangCountryRow {
       .Genres {
+        margin-bottom:  15px;
+
         span {
-          padding: 2px 5px;
           background: #fff;
+          color: rgba(0, 0, 0, 0.6);
           border-radius: 3px;
           font-style: italic;
+          padding: 2px 5px;
         }
       }
 
       .Languages, .Country, .Genres {
+        color: #fff;
         span {
-          margin-right: 15px;
+          margin-right: 10px;
+          font-size: 14px;
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
         }
       }
 
       .Languages, .Country {
         display: inline-block;
+        span {
+          padding: 4px 8px;
+        }
 
       }
 
@@ -51,7 +83,8 @@
 
   .RatingRow {
     .RatingCircularBar {
-      width: 10%;
+      width: 60px;
+      font-weight: bold;
     }
 
     p, .RatingCircularBar {
