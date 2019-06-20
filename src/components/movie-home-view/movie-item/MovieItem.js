@@ -4,10 +4,8 @@
 /* eslint-disable react/destructuring-assignment */
 // @flow
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { imageURL } from '../../../actions/URL';
-import { fetchMovie } from '../../../actions/movie';
+import { imageURL } from '../../helpers/URL';
 import './MovieItem.scss';
 
 type Props = {
@@ -18,7 +16,6 @@ type Props = {
     vote_average: number,
     poster_path: string,
   },
-  fetchMovie:(id: number) => void;
 }
 
 export const MovieItem = (props: Props) => {
@@ -30,18 +27,8 @@ export const MovieItem = (props: Props) => {
     poster_path,
   } = props.movie;
 
-  let date;
-  if (release_date !== undefined) {
-    date = release_date.split('-');
-  }
-
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      className="MovieItem"
-      onClick={() => props.fetchMovie(id)}
-    >
+    <div className="MovieItem">
       <div className="MovieImg">
         <Link to={`/movie/${id}-${title}`}>
           <img src={imageURL(poster_path)} alt={title} />
@@ -55,9 +42,7 @@ export const MovieItem = (props: Props) => {
       <div className="MovieInfo">
         <div className="YearCol">
           <span>Year</span>
-          {
-            date !== null && <h3>{date[0]}</h3>
-          }
+          <h3>{release_date.split('-')[0]}</h3>
         </div>
         <div className="RatingCol">
           <span>Rating</span>
@@ -66,10 +51,6 @@ export const MovieItem = (props: Props) => {
       </div>
     </div>
   );
-};
-
-const MapDispatchToProp = {
-  fetchMovie,
 };
 
 MovieItem.defaultProps = {
@@ -82,4 +63,4 @@ MovieItem.defaultProps = {
   },
 };
 
-export default connect(null, MapDispatchToProp)(MovieItem);
+export default MovieItem;

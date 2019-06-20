@@ -3,15 +3,12 @@
 exports[`<MovieItem /> Should Correctly Render When Movie is passed 1`] = `
 <div
   className="MovieItem"
-  onClick={[Function]}
-  role="button"
-  tabIndex={0}
 >
   <div
     className="MovieImg"
   >
     <a
-      href="/movie/test movie"
+      href="/movie/1-test movie"
       onClick={[Function]}
     >
       <img
@@ -60,15 +57,12 @@ exports[`<MovieItem /> Should Correctly Render When Movie is passed 1`] = `
 exports[`<MovieItem /> Should not Break When no Movie is passed 1`] = `
 <div
   className="MovieItem"
-  onClick={[Function]}
-  role="button"
-  tabIndex={0}
 >
   <div
     className="MovieImg"
   >
     <a
-      href="/movie/"
+      href="/movie/null-"
       onClick={[Function]}
     >
       <img

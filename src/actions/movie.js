@@ -1,6 +1,6 @@
 // @flow
 import axios from 'axios';
-import { movieURL } from './URL';
+import { movieURL } from '../components/helpers/URL';
 
 
 export const FETCH_MOVIE_SUCCESS: string = 'FETCH_MOVIE_SUCCESS';

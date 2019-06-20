@@ -1,6 +1,6 @@
 /* eslint-disable arrow-parens */
 import React from 'react';
-import { imageURL, missing } from '../../../actions/URL';
+import { imageURL, missing } from '../../helpers/URL';
 
 
 type Props = {

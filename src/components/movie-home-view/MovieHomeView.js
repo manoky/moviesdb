@@ -11,7 +11,7 @@ import SideBar from '../UI/sidebar/SideBar';
 type Props = {
   fetchMovies:() => void,
   fetchGenre: () => void,
-  getMovies: Object,
+  movies: Array<Object>,
 }
 
 class MovieHomeView extends Component<Props> {
@@ -22,8 +22,7 @@ class MovieHomeView extends Component<Props> {
   }
 
   render() {
-    const { getMovies } = this.props;
-    const { movies } = getMovies;
+    const { movies } = this.props;
     return (
       <div className="MovieHomeView">
         <SideBar />
@@ -39,5 +38,5 @@ class MovieHomeView extends Component<Props> {
   }
 }
 
-export default connect(({ getMovies }) => ({ getMovies }),
+export default connect(({ movies }) => ({ movies }),
   { fetchMovies, fetchGenre })(MovieHomeView);

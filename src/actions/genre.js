@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { genreURL } from './URL';
+import { genreURL } from '../components/helpers/URL';
 
 export const FETCH_GENRE_SUCCESS: string = 'FETCH_GENRE_SUCCESS';
 export const FETCH_GENRE_FAILURE: string = 'FETCH_GENRE_FAILURE';

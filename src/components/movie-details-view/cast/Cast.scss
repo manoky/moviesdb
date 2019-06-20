@@ -1,6 +1,5 @@
 
 .Cast {
-  width: 1200px;
   margin: auto;
 
   h2 {
@@ -12,16 +11,10 @@
   }
 
   .CastWrapper {
-    display: flex;
-    justify-content: center;
+    @extend %sared-wrapper;
   }
   .CastItem {
     @extend %crew-cast-card;
-
-    img {
-      width: 100%;
-      height: 220px;
-    }
 
     .CastName, .CastRole {
       padding: 0 7px;

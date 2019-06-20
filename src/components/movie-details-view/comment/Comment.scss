@@ -1,8 +1,12 @@
 .Comment {
-  width: 1200px;
   margin: auto;
 
   h2 {
+    /*
+    defined in the index scss file
+    with all other variables.
+   */
+
     @extend %credits-heading;
   }
 

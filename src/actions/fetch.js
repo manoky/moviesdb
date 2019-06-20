@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 // @flow
 import axios from 'axios';
-import { moviesParamsURL, moviesURL } from './URL';
+import { moviesParamsURL, moviesURL } from '../components/helpers/URL';
 
 /* **************
   Action Types
