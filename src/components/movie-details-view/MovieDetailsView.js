@@ -21,7 +21,7 @@ type State = {
     title: string,
     vote_average: number,
     release_date: string,
-    budget: string,
+    budget: number,
     runtime: number,
     overview: string,
     genres: Array<Object>,
@@ -71,6 +71,10 @@ export class MovieDetailsView extends Component <Props, State> {
     const percentage = (parseFloat(movie.vote_average) / 10) * 100;
     const date = movie.release_date.split('-');
     const bgImg = movie.backdrop_path;
+    const budget = (movie.budget).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    const minutes = movie.runtime % 60;
+    const hours = (movie.runtime - minutes) / 60;
+
 
     const backgroundStyle = {
       background: `radial-gradient(circle at bottom left, #ffa949, firebrick, transparent 95%),
@@ -107,8 +111,8 @@ export class MovieDetailsView extends Component <Props, State> {
                     })}
                   />
                   <p>Status: {movie.status}</p>
-                  <p>Budget: {movie.budget}</p>
-                  <p>Runtime: {movie.runtime}</p>
+                  <p>Budget: ${budget}</p>
+                  <p>Runtime: {`${hours}h ${minutes}m`}</p>
                 </div>
                 <div className="OverviewRow">
                   <h3>Overview</h3>
