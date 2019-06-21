@@ -35,7 +35,7 @@ export const MovieItem = (props: Props) => {
         </Link>
       </div>
       <div className="Title">
-        <Link to={`/movie/${title}`}>
+        <Link to={`/movie/${id}-${title}`}>
           <h2>{title}</h2>
         </Link>
       </div>
