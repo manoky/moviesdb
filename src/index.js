@@ -11,5 +11,5 @@ const mount = document.getElementById('app');
 render(
   <Provider store={store}>
     <App />
-  </Provider>,mount
+  </Provider>, mount,
 );

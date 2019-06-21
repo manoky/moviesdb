@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieItem /> Should Correctly Render When Movie is passed 1`] = `
+<div
+  className="MovieItem"
+>
+  <div
+    className="MovieImg"
+  >
+    <a
+      href="/movie/1-test movie"
+      onClick={[Function]}
+    >
+      <img
+        alt="test movie"
+        src="https://image.tmdb.org/t/p/originalnull"
+      />
+    </a>
+  </div>
+  <div
+    className="Title"
+  >
+    <a
+      href="/movie/test movie"
+      onClick={[Function]}
+    >
+      <h2>
+        test movie
+      </h2>
+    </a>
+  </div>
+  <div
+    className="MovieInfo"
+  >
+    <div
+      className="YearCol"
+    >
+      <span>
+        Year
+      </span>
+      <h3>
+        2019
+      </h3>
+    </div>
+    <div
+      className="RatingCol"
+    >
+      <span>
+        Rating
+      </span>
+      <h3 />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MovieItem /> Should not Break When no Movie is passed 1`] = `
+<div
+  className="MovieItem"
+>
+  <div
+    className="MovieImg"
+  >
+    <a
+      href="/movie/null-"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="https://image.tmdb.org/t/p/originalnull"
+      />
+    </a>
+  </div>
+  <div
+    className="Title"
+  >
+    <a
+      href="/movie/"
+      onClick={[Function]}
+    >
+      <h2>
+        
+      </h2>
+    </a>
+  </div>
+  <div
+    className="MovieInfo"
+  >
+    <div
+      className="YearCol"
+    >
+      <span>
+        Year
+      </span>
+      <h3>
+        
+      </h3>
+    </div>
+    <div
+      className="RatingCol"
+    >
+      <span>
+        Rating
+      </span>
+      <h3 />
+    </div>
+  </div>
+</div>
+`;

@@ -1,7 +1,6 @@
 /* eslint-disable arrow-parens */
 import React from 'react';
-import { userImg } from '../../../actions/URL';
-import './Comment.scss';
+import { userImg } from '../../helpers/URL';
 
 
 type Props = {
@@ -17,7 +16,7 @@ const Comment = (props: Props) => {
       <hr />
       <div className="CommentWrapper">
         {
-          comments.map(comment => (
+          comments && comments.map(comment => (
             <div key={comment.id} className="CommentItem">
 
               <div className="CommentAuthor">

@@ -1,7 +1,7 @@
 /* eslint-disable arrow-parens */
 import React from 'react';
-import { imageURL } from '../../../actions/URL';
-import './Cast.scss';
+import { imageURL, missing } from '../../helpers/URL';
+
 
 type Props = {
   credits: Array<Object>,
@@ -16,10 +16,13 @@ const Cast = (props: Props) => {
       <hr />
       <div className="CastWrapper">
         {
-          credits.splice(0, 5).map(cast => (
+          credits && credits.splice(0, 5).map(cast => (
             <div key={cast.id} className="CastItem">
               <div className="CastImg">
-                <img src={imageURL(cast.profile_path)} alt={cast.name} />
+                <img
+                  src={cast.profile_path !== null ? imageURL(cast.profile_path) : missing()}
+                  alt={cast.name}
+                />
               </div>
               <div className="CastName">
                 {cast.name}

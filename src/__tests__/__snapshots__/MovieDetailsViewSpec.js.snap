@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieDetailsView /> Should not Break When Movie id is passed 1`] = `null`;

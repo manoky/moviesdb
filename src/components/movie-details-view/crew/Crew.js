@@ -1,7 +1,7 @@
 /* eslint-disable arrow-parens */
 import React from 'react';
-import { imageURL, missing } from '../../../actions/URL';
-import './Crew.scss';
+import { imageURL, missing } from '../../helpers/URL';
+
 
 type Props = {
   credits: Array<Object>,
@@ -11,12 +11,14 @@ const Crew = (props: Props) => {
   const { credits } = props;
   const filteredCrew = [];
 
-  credits.forEach(crew => {
-    const index = filteredCrew.findIndex(c => c.name === crew.name);
-    if (index <= -1) {
-      filteredCrew.push(crew);
-    }
-  });
+  if (credits !== undefined) {
+    credits.forEach(crew => {
+      const index = filteredCrew.findIndex(c => c.name === crew.name);
+      if (index <= -1) {
+        filteredCrew.push(crew);
+      }
+    });
+  }
 
   return (
     <div className="Crew">

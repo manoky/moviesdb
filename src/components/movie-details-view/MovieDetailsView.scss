@@ -1,64 +1,186 @@
-.MovieDetailsView {
+$background-color: #EFEFEF;
 
-  width: 1200px;
+
+.Loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  p {
+    align-self: center;
+  }
+}
+
+
+.MovieDetailsView {
+  width: 100%;
   margin: auto;
-  padding: 20px;
-  padding-top: 40px;
+
+  .DetailHeadFullWidth {
+    width: 100%;
+    background: lighten($background-color, 2%);
+    padding: 80px 0;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  }
 
   .DetailHead {
     display: flex;
-    flex-direction: row;
-    background: red;
-  }
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    color: #fff;
 
-  .MovieInfo {
-    width: 50%;
-
-    .GenreLangCountryRow {
-      .Genres {
+    .MovieInfo {
+      width: 50%;
+  
+      h1, h3 {
+        color: #fff;
+      }
+  
+      h1 {
         span {
-          padding: 2px 5px;
-          background: #fff;
-          border-radius: 3px;
-          font-style: italic;
+          margin-right: 10px;
         }
       }
-
-      .Languages, .Country, .Genres {
-        span {
-          margin-right: 15px;
+  
+      h3 {
+        margin-bottom: 15px;
+        line-height: 1.3;
+        font-size: 21px;
+      }
+  
+  
+      .GenreLangCountryRow {
+        .Genres {
+          margin-bottom:  15px;
+  
+          span {
+            background: #fff;
+            color: rgba(0, 0, 0, 0.6);
+            border-radius: 3px;
+            font-style: italic;
+            padding: 2px 5px;
+          }
+        }
+  
+        .Languages, .Country, .Genres {
+          color: #fff;
+          span {
+            margin-right: 10px;
+            font-size: 14px;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+          }
+        }
+  
+        .Languages, .Country {
+          display: inline-block;
+          span {
+            padding: 4px 8px;
+          }
+  
+        }
+  
+        .Country {
+          margin-right: 35px;
         }
       }
-
-      .Languages, .Country {
+    }
+  
+    .MovieImg {
+      width: 300px;
+      margin-right: 40px;
+      img {
+        width: 100%;
+      }
+    }
+  
+    .RatingRow {
+      .RatingCircularBar {
+        width: 60px;
+        font-weight: bold;
+      }
+  
+      p, .RatingCircularBar {
         display: inline-block;
-
-      }
-
-      .Country {
-        margin-right: 35px;
+        margin-right: 15px;
       }
     }
   }
 
-  .MovieImg {
-    width: 300px;
-    margin-right: 40px;
-    img {
+  .CreditsRow {
+    width: 80%;
+    margin: auto;
+  }
+
+  @media all and (max-width: 900px) {
+    .DetailHead {
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      
+      .MovieImg {
+        margin: auto;
+        max-width: 90%;
+      }
+
+      .MovieInfo {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        
+        .GenreLangCountryRow {
+          text-align: center;
+          .Languages, .Country {
+            display: block;
+            span {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    .CreditsRow {
       width: 100%;
     }
   }
 
-  .RatingRow {
-    .RatingCircularBar {
-      width: 10%;
-    }
+  @media all and (max-width: 480px) {
+    /* flips the MovieInfo and MovieImg
+      on top of the other on mobile
+    */
+    .DetailHead {
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      .Languages, .Country {
+        display: block;
+      }
 
-    p, .RatingCircularBar {
-      display: inline-block;
-      margin-right: 15px;
-    }
+      .MovieImg {
+        margin: auto;
+        max-width: 90%;
+      }
+
+      .MovieInfo {
+        width: 90%;
+        margin: auto;
+
+        .GenreLangCountryRow {
+          .Languages, .Country {
+            display: block;
+            span {
+              padding: 4px 4px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+        
+      }
+    }  
   }
-
 
 }

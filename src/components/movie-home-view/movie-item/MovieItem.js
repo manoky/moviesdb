@@ -1,14 +1,14 @@
+/* eslint-disable react/default-props-match-prop-types */
+/* eslint-disable react/require-default-props */
 /* eslint-disable camelcase */
 /* eslint-disable react/destructuring-assignment */
 // @flow
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { imageURL } from '../../../actions/URL';
-import { fetchMovie } from '../../../actions/movie';
+import { imageURL } from '../../helpers/URL';
 import './MovieItem.scss';
 
-type Movie = {
+type Props = {
   movie: {
     id: number,
     title: string,
@@ -16,10 +16,9 @@ type Movie = {
     vote_average: number,
     poster_path: string,
   },
-  fetchMovie:(id: number) => void;
 }
 
-const MovieItem = (props: Movie) => {
+export const MovieItem = (props: Props) => {
   const {
     id,
     title,
@@ -28,17 +27,10 @@ const MovieItem = (props: Movie) => {
     poster_path,
   } = props.movie;
 
-  const date = release_date.split('-');
-
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      className="MovieItem"
-      onClick={() => props.fetchMovie(id)}
-    >
+    <div className="MovieItem">
       <div className="MovieImg">
-        <Link to={`/movie/${title}`}>
+        <Link to={`/movie/${id}-${title}`}>
           <img src={imageURL(poster_path)} alt={title} />
         </Link>
       </div>
@@ -50,7 +42,7 @@ const MovieItem = (props: Movie) => {
       <div className="MovieInfo">
         <div className="YearCol">
           <span>Year</span>
-          <h3>{date[0]}</h3>
+          <h3>{release_date.split('-')[0]}</h3>
         </div>
         <div className="RatingCol">
           <span>Rating</span>
@@ -61,4 +53,14 @@ const MovieItem = (props: Movie) => {
   );
 };
 
-export default connect(null, { fetchMovie })(MovieItem);
+MovieItem.defaultProps = {
+  movie: {
+    id: null,
+    title: '',
+    release_date: '',
+    vote_average: null,
+    poster_path: null,
+  },
+};
+
+export default MovieItem;

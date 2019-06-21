@@ -142,11 +142,15 @@ $subheading-color: rgba(0,0,0,0.5);
   }
 
   @media all and (max-width: 600px) {
-    width: 51%;
+    width: 60%;
     margin-right: 0;
     margin-bottom: 40px;
     &:nth-child(3n + 0) {
       margin-right: 0px;
     }
+  }
+
+  @media all and (max-width: 480px) {
+    width: 80%;
   }
 }

@@ -1,18 +1,17 @@
 .Comment {
+  margin: auto;
 
   h2 {
-    text-align: center;
-    position: relative;
-    bottom: -73px;
-    background: #fff;
-    width: 200px;
-    margin: auto;
+    /*
+    defined in the index scss file
+    with all other variables.
+   */
+
+    @extend %credits-heading;
   }
 
   hr {
-    margin: 60px 0;
-    height: 8px;
-    background: #000;
+    @extend %hr-style;
   }
 
   .CommentWrapper {
@@ -24,8 +23,6 @@
       display: flex;
       box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
       border-radius: 4px;
-
-
 
       .CommentContent {
         font-size: 14px;
