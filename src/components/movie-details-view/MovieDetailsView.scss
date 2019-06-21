@@ -1,5 +1,17 @@
 $background-color: #EFEFEF;
 
+
+.Loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  p {
+    align-self: center;
+  }
+}
+
+
 .MovieDetailsView {
   width: 100%;
   margin: auto;
@@ -100,25 +112,6 @@ $background-color: #EFEFEF;
     margin: auto;
   }
 
-
-  // @media all and (max-width: 1200px) {
-  
-  //   .DetailHeadFullWidth {
-  //     padding: 40px;
-  //     height: auto;
-  //   }
-
-  //   .DetailHead {
-  //     width: 100%;
-  //   }
-
-  //   .CreditsRow {
-  //     padding: 0 40px;
-  //     width: 100%;
-  //   }
-
-  // }
-
   @media all and (max-width: 900px) {
     .DetailHead {
       flex-direction: column;
@@ -135,8 +128,6 @@ $background-color: #EFEFEF;
         width: 70%;
         margin: auto;
         text-align: center;
-        
-
         
         .GenreLangCountryRow {
           text-align: center;

@@ -59,8 +59,13 @@ export class MovieDetailsView extends Component <Props, State> {
 
   render() {
     const { movie } = this.state;
+
     if (movie.vote_average === undefined) {
-      return <div>{Loading()}</div>;
+      return (
+        <div className="Loader">
+          <p>{Loading()}</p>
+        </div>
+      );
     }
 
     const percentage = (parseFloat(movie.vote_average) / 10) * 100;
