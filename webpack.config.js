@@ -41,6 +41,7 @@ module.exports = {
 
     new webpack.DefinePlugin({
       DB_KEY: JSON.stringify(process.env.DB_KEY),
+      production: JSON.stringify(process.env.production),
     }),
   ],
 };
