@@ -7,7 +7,8 @@ import rootReducer from '../reducers';
 
 const middleware = [thunk];
 
-if (!process.env !== 'production') {
+// eslint-disable-next-line no-undef
+if (!production) {
   const { createLogger } = require('redux-logger');
   middleware.push(createLogger({ collapsed: true, diff: true }));
 }
