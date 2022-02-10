@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "rc-select": "^9.1.4",
     "react": "^16.8.6",
     "react-circular-progressbar": "^2.0.1",
