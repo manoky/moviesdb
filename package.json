@@ -18,11 +18,11 @@
   "dependencies": {
     "axios": "^0.19.0",
     "compression": "^1.7.4",
-    "css-loader": "^3.0.0",
+    "css-loader": "^6.7.3",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "file-loader": "^4.0.0",
-    "html-webpack-plugin": "^3.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "node-sass": "^4.12.0",
     "rc-select": "^9.1.4",
     "react": "^16.8.6",
@@ -36,8 +36,8 @@
     "redux-localstorage": "^0.4.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1"
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -48,7 +48,7 @@
     "@babel/preset-react": "^7.0.0",
     "axios-mock-adapter": "^1.16.0",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.3.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
@@ -60,8 +60,8 @@
     "flow-bin": "^0.101.0",
     "jest": "^24.8.0",
     "react-test-renderer": "^16.8.6",
-    "webpack": "^4.34.0",
-    "webpack-cli": "^3.3.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^3.7.1"
   }
 }
